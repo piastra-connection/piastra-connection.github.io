@@ -1,0 +1,78 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       whitesmoke;
+$background-color: #111;
+$brand-color:      dodgerblue;
+
+$grey-color:       grey;
+$grey-color-light: darken($grey-color, 40%);
+$grey-color-dark:  lighten($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting",
+        "telemarket",
+        "2021"
+;
+
+// CUSTOM
+.player-container {
+  padding:20px;
+}
+.active a,
+.page-link.active {
+  color: DarkOrange;
+}
+ul li {
+  display: block;
+  padding: 5px;
+  margin-bottom: 0
+}
+#title {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.player-container header {
+  margin-left: 30px;
+  color: grey;
+}
+.site-footer p {
+  margin-bottom: 0;
+}

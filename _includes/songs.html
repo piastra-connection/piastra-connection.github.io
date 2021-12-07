@@ -1,0 +1,21 @@
+<ul>
+{% assign sorted = (site.data.audio | sort: 'date' | reverse ) %}
+{% for song in sorted %}{% if song.singer contains include.star or include.star == null %}
+  <li>
+    <h4>{{ song.name }}</h4>
+    <p>
+      {{ song.singer }}, {{ song.date | date_to_string }}
+    </p>
+    <audio controls="controls">
+      Your browser does not support the <code>audio</code> element.
+			{% if song.id %}
+			  {% assign link = "http://a.clyp.it/" | append: song.id | append: ".mp3" %}
+			{% else %}
+				{% assign link = "https://www.dropbox.com/s/" | append: song.dropbox %}
+			{% endif %}
+      <source src="{{ link }}" type="audio/mpeg">
+    </audio>
+
+  </li>
+{% endif %}{% endfor %}
+</ul>
