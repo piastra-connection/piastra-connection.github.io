@@ -1,0 +1,1 @@
+{% assign song = include.song %}{{ song.name }}{% if song.singer %} - {{ song.singer }}{% endif %}{% if song.date %} ({{ song.date }}){% endif %}{% if song.original %} - {{ song.original }}{% endif %}{% if song.player %} by {{ song.player }}{% endif %}
