@@ -19,6 +19,5 @@
 
 	<script src="{{ "/js/jquery-1.11.2.min.js" | prepend: site.baseurl }}"></script>
 	<!-- SITE SCRIPTS -->
-  <script src="{{ "/js/script.js" | prepend: site.baseurl }}" defer></script>
-  <script src="{{ "/js/coffee.js" | prepend: site.baseurl }}" defer></script>
+  <script src="{{ "/js/script.js" | prepend: site.baseurl }}?{{ 'now' | date: '%s' }}" defer></script>
 </head>
