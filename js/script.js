@@ -33,7 +33,7 @@ function run(link, play = false){
   player.load();
   if (play) { player.play() };
   $('#title').html(link.text());
-  $('#meta').html(link.attr('data-meta'));
+  $('#meta').html(link.parent().find('p').text() || '&nbsp;');
 }
 
 function string_to_slug (str) {
